@@ -4,11 +4,24 @@ var environment = require("environment"),
 
 var document = environment.document,
     window = environment.window,
-    querySelectorAll = document.querySelectorAll;
+    nativeQuerySelectorAll = document.querySelectorAll;
 
 
-if (!querySelectorAll) {
-    querySelectorAll = function querySelectorAll(selectors) {
+module.exports = querySelectorAll;
+
+
+function querySelectorAll(selectors, ownerDocument) {
+    ownerDocument = ownerDocument || document;
+
+    if (!ownerDocument.querySelectorAll) {
+        ownerDocument.querySelectorAll = nativeQuerySelectorAll;
+    }
+
+    return ownerDocument.querySelectorAll(selectors);
+}
+
+if (!nativeQuerySelectorAll) {
+    nativeQuerySelectorAll = function querySelectorAll(selectors) {
         var style = this.createElement("style"),
             elements = [],
             qsa = [],
@@ -36,15 +49,4 @@ if (!querySelectorAll) {
     };
 }
 
-document.querySelectorAll = getPrototypeOf(document).querySelectorAll = querySelectorAll;
-
-
-module.exports = function(selectors, ownerDocument) {
-    ownerDocument = ownerDocument || document;
-
-    if (!ownerDocument.querySelectorAll) {
-        ownerDocument.querySelectorAll = querySelectorAll;
-    }
-
-    return ownerDocument.querySelectorAll(selectors);
-};
+document.querySelectorAll = getPrototypeOf(document).querySelectorAll = nativeQuerySelectorAll;
