@@ -22,7 +22,6 @@
     "zombie": "^2.5.1"
   },
   "dependencies": {
-    "environment": "git://github.com/nathanfaucett/environment",
-    "get_prototype_of": "git://github.com/nathanfaucett/get_prototype_of"
+    "environment": "git://github.com/nathanfaucett/environment"
   }
 }
