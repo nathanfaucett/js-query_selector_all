@@ -1,7 +1,7 @@
 {
-  "name": "query_selector_all",
+  "name": "@nathanfaucett/query_selector_all",
   "version": "0.0.1",
-  "description": "querySelectorAll for the browser and node.js",
+  "description": "querySelectorAll polyfill",
   "repository": {
     "type": "git",
     "url": "https://github.com/nathanfaucett/query_selector_all.git"
@@ -19,13 +19,13 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-jsbeautifier": "^0.2.10",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-jsbeautifier": "^0.2.13",
     "tape": "^4.2.0",
     "zuul": "^3.6.0"
   },
   "dependencies": {
-    "environment": "git://github.com/nathanfaucett/environment.git"
+    "@nathanfaucett/environment": "^0.0.1"
   }
 }
