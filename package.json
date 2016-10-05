@@ -1,6 +1,6 @@
 {
   "name": "@nathanfaucett/query_selector_all",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "querySelectorAll polyfill",
   "repository": {
     "type": "git",
@@ -26,6 +26,6 @@
     "zuul": "^3.6.0"
   },
   "dependencies": {
-    "@nathanfaucett/environment": "^0.0.1"
+    "@nathanfaucett/environment": "^0.0.2"
   }
 }
